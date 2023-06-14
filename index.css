@@ -1,0 +1,367 @@
+﻿*{
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    cursor: default;
+    scroll-margin-top: 9.4vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* nar bar */
+#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(101, 101, 101, 0.5);
+    top: 0;
+    width: 100%;
+    height: 9.5vh;
+    z-index: 5000000;
+    overflow: visible;
+    position: sticky;
+}
+
+/*------NAV & HOME------*/
+#navbar li {
+    margin-left: 5vw;
+}
+
+#navbar li a {
+    float: left;
+    font-family: Arial Black;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2vh 1vw;
+    text-decoration: none;
+    font-size: 3.76vh;
+    cursor: pointer;
+}
+
+#navbar li img {
+    position:absolute;
+    right: 0;
+    top:0;
+    height: 17vh;
+    width: 20vh;
+    object-fit: cover;
+    padding-right: 2vw;
+    z-index: 999999999999999;
+    display: block;
+}
+
+@media (max-width:550px){
+    #navbar li img {
+        display: none;
+    }
+}
+
+#navbar li a:hover {
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.2s ease-out;
+}
+
+#home{
+    text-align: center;
+    /* font-family: Oswald; */
+    color: white;
+    /* background-color: #1ca8cf; */
+}
+
+#background-part{
+  position: absolute;
+  height: 102%;
+  width: 100%;
+}
+
+#home h1{
+    font-size: 20vh;
+}
+
+#phrase{
+    font-size: 7vh;
+    padding-bottom: 10vh;
+}
+
+#time{
+    font-size: 4vh;
+}
+
+.page{
+    height: fit-content;
+}
+
+#button{
+    height:10vh;
+    width:35vh;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 0.5vh solid transparent;
+    border-radius: 1vw;
+    font-size: 4vh;
+}
+
+#title{
+    padding-top: 20vh;
+    padding-bottom: 7vh;
+}
+
+#filler{
+    height: 12vh;
+}
+/*------About------*/
+#about{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  /* background-color: rgb(253, 253, 253); */
+  color: white;
+}
+
+#about h1{
+    font-size: 6.5vh;
+    text-align: left;
+    padding-top:4vh;
+    padding-left:10vh;
+    display: block;
+}
+
+#aboutDesc{
+    display:inline-block;
+    padding-left:10vh;
+    padding-right:10vh;
+    padding-top: 2vh;
+    font-size: 3vh;
+    line-height: 5vh;
+    padding-bottom: 4vh;
+}
+
+#video{
+    display:inline-block;
+    padding-bottom: 1vh;
+    padding-left: 3vw;
+}
+
+/*------Schedule------*/
+tr td{
+    padding-left: 2vh;
+    /* font-family:sans-serif; */
+    font-size:3vh;
+    overflow-y:scroll;
+
+}
+
+.lessons{
+    font-weight: bold;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-decoration: none;
+    color: rgb(92, 92, 92);
+}
+
+.lessons:hover{
+    cursor:pointer;
+    opacity:0.7;
+    transition: 0.2s ease-out;
+}
+
+.lessons:active{
+    opacity:0.5;
+}
+
+#schedule{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: rgb(253, 253, 253);
+}
+#week_select{
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    padding: 2%;
+}
+#week_select h3{
+    height: 9%;
+    width: 90%;
+    margin: auto;
+    font-size: 5vw;
+}
+.week_button{
+    height: 30%;
+    width: 90%;
+    margin-top: 7%;
+    margin-bottom: 14%;
+    border-top: 3px solid rgb(9, 9, 121);
+    border-collapse: collapse;
+    font-size: 1.6vw;
+    color: rgb(92, 92, 92);
+    cursor: pointer;
+}
+.week_button h5{
+    padding-top: 7%;
+    font-size: min(5vw,30px);
+    cursor: pointer;
+}
+.week_button p{
+    cursor: pointer;
+    font-size: min(4vw,25px);
+
+}
+.week_button:hover{
+    opacity: 0.7;
+    transition: 0.2s ease-out;
+}
+#week_table{
+    padding-top: 3%;
+    width: 60%;
+}
+.schedule_table{
+    width: 100%;
+    height: 85%;
+    border: none;
+    padding-top: 3%;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.schedule_table tr{
+    height:25%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.schedule_table tr:nth-child(odd){
+    background-color: rgb(243, 243, 243);
+}
+.schedule_table tr:nth-child(even){
+    background-color: rgb(214, 214, 214);
+}
+.schedule_table th{
+    width: 20%;
+    border-right: 2px solid rgb(228, 228, 228);
+    font-size: 1.3vw;
+}
+.schedule_table th h6{
+    padding-top: 8%;
+    font-size: 1.7vw;
+}
+.schedule_table td{
+    width: 80%;
+}
+.hide{
+    display: none;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    to{
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/*------FAQ------*/
+
+#faq h1{
+    font-size: 6.5vh;
+    text-align: left;
+    padding-top:4vh;
+    padding-left:10vh;
+    color: rgb(243, 243, 243);
+}
+
+#Question{
+    padding: 5vh;
+    font-size: 5vh;
+    color: rgba(243, 243, 243,0.8);
+  }
+
+  .flex-container {
+    padding:10px;
+    display: flex;
+    flex-wrap: nowrap;
+
+  }
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 100vh;
+    height:auto;
+    margin: 4vh;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    border-radius: 10%;
+    overflow:hidden;
+  }
+
+  #concerns{
+    font-size: 4vh;
+    text-align: center;
+    padding-top:4vh;
+    color: rgb(243, 243, 243);
+  }
+
+/*------Footer------*/
+footer p{
+    font-size: 3vh;
+    color:white; 
+    text-align: center; 
+    margin-top: 10vh;
+    padding-bottom: 5vh;
+}
+
+/*Greeting*/
+#ActualContent{
+    display: none;
+    opacity: 0;
+    animation-name: show;
+    animation-iteration-count: 1;
+    animation-duration: 0.6s;
+    animation-fill-mode: forwards;
+}
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* email link */
+#email {
+    color:#14d8ff;
+}
+#email:hover {
+    opacity: 0.8;
+    transition: 0.2s ease-out;
+}
+#email:active {
+    opacity: 0.5;
+}
